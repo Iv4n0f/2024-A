@@ -1,0 +1,3 @@
+/home/ivan/Code/3_semestre/cc2/lab1/build/CMakeFiles/hello.dir
+/home/ivan/Code/3_semestre/cc2/lab1/build/CMakeFiles/edit_cache.dir
+/home/ivan/Code/3_semestre/cc2/lab1/build/CMakeFiles/rebuild_cache.dir
