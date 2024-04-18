@@ -29,7 +29,6 @@ void insertar(int num, Nodo &Lista, int &minimo) {
       Lista->sig = temp;
     }
   }
-//  std::cout << "Nodo insertado\n";
 }
 
 void print(Nodo Lista) {
