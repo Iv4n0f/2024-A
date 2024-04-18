@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/programa.dir/src/main.cpp.o CMakeFiles/programa.dir/src/funciones.cpp.o -o programa  libbiblioteca.a 

@@ -1,0 +1,4 @@
+/home/ivan/Code/2024-A/cc2/cmake1/build/CMakeFiles/programa.dir
+/home/ivan/Code/2024-A/cc2/cmake1/build/CMakeFiles/biblioteca.dir
+/home/ivan/Code/2024-A/cc2/cmake1/build/CMakeFiles/edit_cache.dir
+/home/ivan/Code/2024-A/cc2/cmake1/build/CMakeFiles/rebuild_cache.dir

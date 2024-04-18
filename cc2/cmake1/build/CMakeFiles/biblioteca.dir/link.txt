@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbiblioteca.a CMakeFiles/biblioteca.dir/src/funciones.cpp.o
+/usr/bin/ranlib libbiblioteca.a
