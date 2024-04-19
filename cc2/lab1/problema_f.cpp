@@ -21,14 +21,33 @@ void insertar(int num, Nodo &Lista, int &minimo) {
     temp->sig = Lista;
     Lista = temp;
     minimo = num;
-  } else { // Insertar en la segunda posicion
+  } else { // Insertar en donde mayor al anterior
     if (Lista->sig == NULL) {
       Lista->sig = temp;
     } else {
-      temp->sig = Lista->sig;
-      Lista->sig = temp;
+      //     temp->sig = Lista->sig;
+      //     Lista->sig = temp;
+      Nodo actual= Lista->sig;
+      Nodo anterior = Lista;
+      while (temp->num > actual->num) {
+        if (actual->sig != NULL) {
+          anterior = actual;
+          actual = actual->sig;
+        }
+        else {
+          anterior = actual;
+          break;}
+      }
+        temp->sig = anterior->sig;
+        anterior->sig = temp;
     }
   }
+}
+
+
+void solicitar(Nodo &Lista){
+  Lista = Lista->sig;
+  std::cout << "Solicitado: " <<Lista ->num;
 }
 
 void print(Nodo Lista) {
