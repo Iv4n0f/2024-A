@@ -6,7 +6,7 @@ void del(int *&ptr) { ptr = NULL; }
 
 int main() {
   int *ptr;
-  cout <<"Antes de funcion:"<< ptr<<endl;
+  cout <<"Antes de funcion:"<< *ptr<<endl;
   del(ptr);
-  cout <<"Despues de funcion:"<< ptr;
+  cout <<"Despues de funcion:"<< *ptr;
 }
