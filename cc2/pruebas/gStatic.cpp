@@ -38,7 +38,7 @@ public:
 
 int main() {
   int arr[] = {1, 2, 3};
-  GenericStaticArray<int> sa(arr, 3); // Usando int como tipo de dato
+  GenericStaticArray<int> sa(arr, 3);
   sa.print();
   sa.set(8, 1);
   sa.print();
