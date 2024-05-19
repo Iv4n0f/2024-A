@@ -35,3 +35,11 @@
 *.jpg
 *.png
 *.jpeg
+*.gif
+
+# Audio
+*.wav
+*.mp3
+
+# Video
+*.mp4
