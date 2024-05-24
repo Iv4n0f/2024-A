@@ -1,37 +1,59 @@
-// dynamic allocation and polymorphism
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Polygon {
-  protected:
-    int width, height;
-  public:
-    Polygon (int a, int b) : width(a), height(b) {}
-    virtual int area (void) =0;
-    void printarea()
-      { cout << this->area() << '\n'; }
-};
+double stringToDouble(const string &str) {
+  double result = 0.0;
+  int decimalPosition = -1;
+  bool isDecimal = false;
+  int digitsAfterDecimal = 0;
+  bool isNegative = false;
+  int start = 0;
 
-class Rectangle: public Polygon {
-  public:
-    Rectangle(int a,int b) : Polygon(a,b) {}
-    int area()
-      { return width*height; }
-};
+  // Check for negative sign at the beginning
+  if (str[0] == '-') {
+    isNegative = true;
+    start = 1;
+  }
 
-class Triangle: public Polygon {
-  public:
-    Triangle(int a,int b) : Polygon(a,b) {}
-    int area()
-      { return width*height/2; }
-};
+  for (int i = start; i < str.length(); i++) {
+    char c = str[i];
+    if (c >= '0' && c <= '9') {
+      if (isDecimal) {
+        digitsAfterDecimal++;
+        result = result * 10 + (c - '0');
+      } else {
+        result = result * 10 + (c - '0');
+      }
+    } else if (c == '.' && !isDecimal) {
+      isDecimal = true;
+      decimalPosition = digitsAfterDecimal;
+    } else {
+      throw invalid_argument("Cadena no válida para conversión a double");
+    }
+  }
 
-int main () {
-  Polygon * ppoly1 = new Rectangle (4,5);
-  Polygon * ppoly2 = new Triangle (4,5);
-  ppoly1->printarea();
-  ppoly2->printarea();
-  delete ppoly1;
-  delete ppoly2;
-  return 0;
+  if (isDecimal) {
+    double divisor = 1;
+    for (int i = 0; i < digitsAfterDecimal; i++) {
+      divisor *= 10;
+    }
+    result /= divisor;
+  }
+
+  if (isNegative) {
+    result = -result;
+  }
+
+  return result;
 }
+int main(){
+  string op;
+
+  double n = 1.0;
+  
+  getline(cin,op);
+
+  double n2 = stringToDouble(op);
+  cout<<n +n2;
+};
