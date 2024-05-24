@@ -46,7 +46,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">Formulario de Registro</h5>
-            <form>
+            <form onsubmit="procesar();return false">
               <div class="form-group">
                 <label for="primer_nombre" class="mt-2">Primer nombre</label>
                 <input type="text" class="form-control" id="primer_nombre" placeholder="Ingresa tu primer nombre">
@@ -73,7 +73,7 @@
               </div>
               <div class="row flex-column mt-3">
                 <div class="col-6">
-                  <button type="button" class="btn btn-primary btn-block" onclick="procesar()">Procesar datos</button>
+                  <button type="submit" class="btn btn-primary btn-block">Procesar datos</button>
                 </div>
               </div>
               <div class="form-group">
