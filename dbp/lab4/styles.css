@@ -1,0 +1,26 @@
+body {
+  background-color: #293b50;
+}
+
+.card-title {
+  color: #054991;
+  font-weight: bold;
+}
+
+.form-control {
+  border-color: #054991;
+}
+
+.btn-primary {
+  background-color: #054991;
+  border-color: #054991;
+}
+
+.btn-primary:hover {
+  background-color: #054991;
+  border-color: #054991;
+}
+
+.form-group label {
+  font-weight: bold;
+}
