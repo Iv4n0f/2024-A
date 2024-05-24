@@ -43,3 +43,7 @@
 
 # Video
 *.mp4
+
+# Copmpresed files
+*.zip
+*.rar
