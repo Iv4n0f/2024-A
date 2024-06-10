@@ -1,3 +1,30 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.footer {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.container {
+  padding-top: 2rem;
+}
+
 .row {
   opacity: 0;
   filter: blur(5px);
@@ -5,21 +32,69 @@
   transition: all 750ms;
 }
 
-.portafolio{
+.portafolio {
   filter: blur(5px);
   transform: translateY(+100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+
+.card-title {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #555;
+}
+
+.btn-secondary {
+  background-color: #1a1f24;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2b343c;
 }
 
 .fila:nth-child(1) {
   transition-delay: 100ms;
 }
 
-.fila:nth-child(2){
+.fila:nth-child(2) {
   transition-delay: 200ms;
-} 
+}
 
-.show{
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
+.form-group label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #1d262f;
+  box-shadow: 0 0 0 0.2rem rgba(35, 44, 53, 0.056);
 }
