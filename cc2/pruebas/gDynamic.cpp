@@ -1,7 +1,6 @@
 #include <iostream>
 
-template <typename T>
-class GenericDynamicArray {
+template <typename T> class GenericDynamicArray {
   int size;
   T *data;
 
@@ -10,10 +9,7 @@ public:
 
   T get(int index) const { return data[index]; }
 
-  GenericDynamicArray() {
-    size = 0;
-    data = new T[1];
-  }
+  GenericDynamicArray() { size = 0; }
 
   GenericDynamicArray(T arr[], int size) {
     this->size = size;
@@ -36,8 +32,10 @@ public:
 
   void push_back(const T &val) {
     T *temp = new T[size + 1];
-    for (int i = 0; i < size; i++) {
-      temp[i] = data[i];
+    if (data) {
+      for (int i = 0; i < size; i++) {
+        temp[i] = data[i];
+      }
     }
     temp[size] = val;
     size++;
@@ -81,14 +79,11 @@ public:
 };
 
 int main() {
-  int arr[] = {1, 2, 3};
-  GenericDynamicArray<int> da(arr, 3);
+  GenericDynamicArray<int> da{};
   da.push_back(7);
-  da.print();
-  da.insert(9, 1);
-  da.print();
-  da.remove(3);
-  da.print();
+  da.push_back(9);
+  da.push_back(10);
+  da.push_back(3);
 
   return 0;
 }
