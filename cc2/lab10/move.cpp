@@ -7,7 +7,6 @@ using namespace std;
 
 float stringToFloat(const string &str) {
   float result = 0.0;
-  int decimalPosition = -1;
   bool isDecimal = false;
   int digitsAfterDecimal = 0;
   bool isNegative = false;
