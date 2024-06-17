@@ -44,12 +44,6 @@ void insertar(int num, Nodo &Lista, int &minimo) {
   }
 }
 
-
-void solicitar(Nodo &Lista){
-  Lista = Lista->sig;
-  std::cout << "Solicitado: " <<Lista ->num;
-}
-
 void print(Nodo Lista) {
   Nodo temp = Lista;
   while (temp != NULL) {
