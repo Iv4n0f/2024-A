@@ -22,27 +22,27 @@ public:
     Nodo temp = new nodo;
     temp->num = num;
     temp->sig = NULL;
-    //Lista vacia
+    // Lista vacia
     if (L == NULL) {
       L = temp;
       min = num;
       max = temp;
       return;
     }
-    //Menor o igual al primero
+    // Menor o igual al primero
     if (num <= min) {
       temp->sig = L;
       L = temp;
       min = num;
       return;
     }
-    //Mayor al maximo
+    // Mayor al maximo
     if (num > max->num) {
       max->sig = temp;
       max = temp;
       return;
     }
-    //Otros casos
+    // Otros casos
     Nodo actual = L;
     Nodo anterior = NULL;
     while (actual != NULL && actual->num < num) {
@@ -55,7 +55,7 @@ public:
 
   void print() {
     Nodo temp = L;
-    std::cout << "Primer numero: " << temp->num << std::endl;
+    std::cout << "\nPrimer numero: " << temp->num << std::endl;
     while (temp->sig != NULL) {
       temp = temp->sig;
     }
@@ -65,21 +65,39 @@ public:
   void eliminar(float num) {
     Nodo actual = L;
     Nodo anterior = NULL;
+    // Primer elemento
     if (actual != NULL && actual->num == num) {
       L = actual->sig;
       delete actual;
       return;
     }
+    // Buscar elemento a eliminar
     while (actual != NULL && actual->num != num) {
       anterior = actual;
       actual = actual->sig;
     }
     if (actual != NULL) {
       anterior->sig = actual->sig;
-      if (actual == max) { 
+      if (actual == max) {
         max = anterior;
       }
       delete actual;
+    }
+  }
+
+  bool buscar(float num) {
+    Nodo actual = L;
+    int index = 0;
+    while (actual != NULL && actual->num != num) {
+      actual = actual->sig;
+      index++;
+    }
+    if (actual != NULL) {
+      cout << "\n[" << index << "] " << actual->num;
+      return true;
+    } else {
+      cout << "\nEl número no se encuentra en la lista.";
+      return false;
     }
   }
 };
@@ -127,7 +145,8 @@ void readFile(string filename, List &list) {
     cerr << "No se puede abrir el archivo: " << filename << endl;
   }
   int c = 0;
-  while (getline(file, line) && c < 100000) {
+  int leidos = 500000;
+  while (getline(file, line) && c < leidos) {
     string number = "";
     bool x_filled = false;
     for (char c : line) {
@@ -142,6 +161,7 @@ void readFile(string filename, List &list) {
     }
     list.insertar(stringToFloat(number)); // number = y
     c++;
+    //cout << "\rInserciones: " << c << " / " << leidos;
   }
   file.close();
 }
@@ -153,6 +173,7 @@ int main() {
   readFile("text.txt", L);
   auto end = chrono::high_resolution_clock::now();
 
+  cout << endl;
   L.print();
 
   chrono::duration<double> duration = end - start;

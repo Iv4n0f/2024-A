@@ -9,7 +9,10 @@ public:
 
   T get(int index) const { return data[index]; }
 
-  GenericDynamicArray() { size = 0; }
+  GenericDynamicArray() {
+    size = 0;
+    data = new T[size];
+  }
 
   GenericDynamicArray(T arr[], int size) {
     this->size = size;
@@ -30,7 +33,7 @@ public:
 
   ~GenericDynamicArray() { delete[] data; }
 
-  void push_back(const T &val) {
+  void push_back(T val) {
     T *temp = new T[size + 1];
     if (data) {
       for (int i = 0; i < size; i++) {
@@ -79,11 +82,12 @@ public:
 };
 
 int main() {
-  GenericDynamicArray<int> da{};
+  GenericDynamicArray<int> da;
   da.push_back(7);
   da.push_back(9);
   da.push_back(10);
   da.push_back(3);
+  da.print();
 
   return 0;
 }
