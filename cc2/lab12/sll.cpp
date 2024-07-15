@@ -158,7 +158,7 @@ void readFile(string filename, List &list, float leidos) {
 int main() {
   List L;
 
-  const float leidos = 500000;
+  const float leidos = 250000;
 
   auto start = chrono::high_resolution_clock::now();
   readFile("text.txt", L,leidos);
