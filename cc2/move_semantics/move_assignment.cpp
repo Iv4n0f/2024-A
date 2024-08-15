@@ -1,19 +1,16 @@
 #include <iostream>
 
-class A
-{
+class A {
 public:
   int a;
-  A &operator=(A &&other)
-  {
+  A &operator=(A &&other) {
     this->a = other.a;
     other.a = 0;
     return *this;
   }
 };
 
-int main()
-{
+int main() {
   A a;
   a.a = 1;
   A b;
